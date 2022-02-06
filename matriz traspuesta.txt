@@ -1,0 +1,42 @@
+// matriz_transpuesta.cpp: define el punto de entrada de la aplicación de consola.
+//
+
+#include "stdafx.h"
+#include <cstdlib>
+#include<stdio.h>
+#define MAX 10
+int main(int argc, char** args)
+{
+	int matriz[MAX][MAX], col, fil, i = 0, j = 0;
+	printf_s("¿De cuantas columnas sera la matriz? ");
+	scanf_s("%d", &col);
+	printf_s("¿De cuantas filas sera la matriz? ");
+	scanf_s("%d", &fil);
+	for (i = 0; i < fil; i++)/*RUTINA PARA LEER LOS DATOS*/
+	{
+		for (j = 0; j < col; j++) {
+			printf_s("Introdusca valores del lugar [%d] [%d] de la matriz\n", i + 1, j + 1);
+			scanf_s("%d", &matriz[i][j]);
+		}
+	}
+	printf_s("\n\n\t\tMatriz");
+	printf_s("\n\n");
+	for (i = 0; i < fil; i++) {
+		printf_s("\n\t\t");
+		for (j = 0; j < col; j++) {
+			printf_s("  %6d  ", matriz[i][j]);
+		}
+	}
+	printf_s("\n\n\t\tMatriz transpuesta");
+	printf_s("\n\n");
+	for (i = 0; i < col; i++) {
+		printf_s("\n\t\t");
+
+		for (j = 0; j < fil; j++) {
+			printf_s("  %6d  ", matriz[j][i]);
+		}
+	}
+	printf_s("\n\n\n");
+	system("PAUSE");
+	return 0;
+}
